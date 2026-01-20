@@ -1,5 +1,6 @@
 # effect-note-cli
 
+## this is simple list using new framwork effect  
 To install dependencies:
 
 ```bash
