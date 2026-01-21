@@ -27,4 +27,3 @@ export const writeNotes = (notes: Note[]) =>
     },
     catch: () => new Error("Failed to write notes"),
   });
-Effect.runPromise(readNotes).then(data => console.log(data))
