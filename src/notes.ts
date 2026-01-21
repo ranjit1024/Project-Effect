@@ -2,7 +2,7 @@ import { Effect } from "effect";
 import { readNotes, writeNotes } from "./storage";
 
 export const addNote = (text: string) =>
-  Effect.flatMap(readNotes, (notes) => {
+  Effect.flatMap( readNotes, (notes) => {
     const newNote = {
       id: Date.now(),
       text,
@@ -10,6 +10,7 @@ export const addNote = (text: string) =>
 
     return writeNotes([...notes, newNote]);
   });
+
 export const listNotes = Effect.flatMap(readNotes, (notes) =>
   Effect.sync(() => {
     notes.forEach((n, i) => {
@@ -23,3 +24,4 @@ export const removeNote = (index: number) =>
     const updated = notes.filter((_, i) => i !== index - 1);
     return writeNotes(updated);
   });
+
